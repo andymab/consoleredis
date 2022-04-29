@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+ 
+use Symfony\Component\Console\Application;
+//..регистрируем команды
+use Console\App\Commands\HelloworldCommand;
+use Console\App\Commands\ClearcacheCommand;
+
+ 
+$app = new Application();
+$app->add(new HelloworldCommand()); //подключаем команду
+$app->add(new ClearcacheCommand());
+$app->run();
